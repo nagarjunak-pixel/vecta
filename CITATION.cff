@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use or reference Vecta in retrieval research or production RAG systems, please cite it as below."
+type: software
+title: "Vecta: Vector Search Engine — HNSW, IVF-PQ, RaBitQ-Style Binary Codes, Hybrid BM25+RRF & Bit-Exact Native C++20 Kernels"
+version: 1.0.0
+date-released: "2026-11-17"
+license: Apache-2.0
+url: "https://nagarjunak-pixel.github.io/"
+repository-code: "https://github.com/nagarjunak-pixel/vecta"
+authors:
+  - family-names: "Kamireddy"
+    given-names: "Nagarjuna Reddy"
+    affiliation: "Suryagentic AI"

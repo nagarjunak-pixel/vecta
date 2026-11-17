@@ -1,0 +1,49 @@
+name: Vecta CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Python 3.13 + C++20 kernels (ruff, mypy --strict, pytest >=95% coverage, benchmark)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Ensure a C++20 compiler is present
+        run: clang++ --version || g++ --version
+
+      - name: Compile C++20 kernels with warnings as errors
+        run: clang++ -O3 -std=c++20 -ffp-contract=off -Wall -Wextra -Werror -shared -fPIC csrc/vecta_kernels.cpp -o /tmp/libvecta_check.so
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Set up Python 3.13
+        run: uv python install 3.13
+
+      - name: Sync dependencies from lockfile
+        run: uv sync --python 3.13 --frozen --all-extras
+
+      - name: Ruff format + lint
+        run: |
+          uv run ruff format --check src tests
+          uv run ruff check src tests
+
+      - name: Mypy (strict)
+        run: uv run mypy src tests
+
+      - name: Pytest + Hypothesis + coverage gate (>=95%)
+        run: uv run pytest --cov=vecta --cov-report=term-missing --cov-fail-under=95
+
+      - name: Reproduce benchmark
+        run: uv run vecta bench --n 20000 --nq 200

@@ -1,0 +1,145 @@
+{
+  "dataset": {
+    "name": "gauss-64c-96d-20000",
+    "n": 20000,
+    "nq": 200,
+    "dim": 96,
+    "clusters": 64,
+    "spread": 0.6
+  },
+  "build_seconds": {
+    "hnsw": 25.86524733299848,
+    "ivf_pq": 5.4350759999997535,
+    "binary": 0.002030040999670746
+  },
+  "hnsw_graph": {
+    "nodes": 20000.0,
+    "max_level": 4.0,
+    "mean_degree_l0": 13.5078,
+    "max_degree_l0": 32.0,
+    "reachable_fraction": 1.0
+  },
+  "hnsw_filtered_even_ids_recall_at_10_ef64": 1.0,
+  "sweep": [
+    {
+      "index": "flat",
+      "params": "exact",
+      "recall_at_10": 1.0,
+      "qps": 1831.433354024482,
+      "bytes_per_vector": 384,
+      "distance_evals_per_query": 20000.0
+    },
+    {
+      "index": "hnsw",
+      "params": "M=16,ef=16",
+      "recall_at_10": 0.983,
+      "qps": 4826.313058714313,
+      "bytes_per_vector": 512,
+      "distance_evals_per_query": 212.24
+    },
+    {
+      "index": "hnsw",
+      "params": "M=16,ef=32",
+      "recall_at_10": 0.9985,
+      "qps": 1763.229815275448,
+      "bytes_per_vector": 512,
+      "distance_evals_per_query": 281.43
+    },
+    {
+      "index": "hnsw",
+      "params": "M=16,ef=64",
+      "recall_at_10": 1.0,
+      "qps": 1695.081056153436,
+      "bytes_per_vector": 512,
+      "distance_evals_per_query": 368.32
+    },
+    {
+      "index": "hnsw",
+      "params": "M=16,ef=128",
+      "recall_at_10": 1.0,
+      "qps": 1145.5166463073472,
+      "bytes_per_vector": 512,
+      "distance_evals_per_query": 473.265
+    },
+    {
+      "index": "ivf-pq",
+      "params": "nlist=141,m=16,nprobe=4,rerank=0",
+      "recall_at_10": 0.55,
+      "qps": 2951.510359420774,
+      "bytes_per_vector": 16,
+      "distance_evals_per_query": 0.0
+    },
+    {
+      "index": "ivf-pq",
+      "params": "nlist=141,m=16,nprobe=16,rerank=0",
+      "recall_at_10": 0.55,
+      "qps": 747.9108736463852,
+      "bytes_per_vector": 16,
+      "distance_evals_per_query": 0.0
+    },
+    {
+      "index": "ivf-pq",
+      "params": "nlist=141,m=16,nprobe=8,rerank=50",
+      "recall_at_10": 0.968,
+      "qps": 1387.9118086052272,
+      "bytes_per_vector": 16,
+      "distance_evals_per_query": 50.0
+    },
+    {
+      "index": "ivf-pq",
+      "params": "nlist=141,m=16,nprobe=16,rerank=100",
+      "recall_at_10": 0.999,
+      "qps": 660.2839220852093,
+      "bytes_per_vector": 16,
+      "distance_evals_per_query": 100.0
+    },
+    {
+      "index": "binary+rerank",
+      "params": "bits=96,rerank=50",
+      "recall_at_10": 0.665,
+      "qps": 14904.88781187289,
+      "bytes_per_vector": 16,
+      "distance_evals_per_query": 50.0
+    },
+    {
+      "index": "binary+rerank",
+      "params": "bits=96,rerank=200",
+      "recall_at_10": 0.9505,
+      "qps": 8715.040106621616,
+      "bytes_per_vector": 16,
+      "distance_evals_per_query": 200.0
+    },
+    {
+      "index": "binary+rerank",
+      "params": "bits=96,rerank=500",
+      "recall_at_10": 0.991,
+      "qps": 5090.051537529039,
+      "bytes_per_vector": 16,
+      "distance_evals_per_query": 500.0
+    }
+  ],
+  "kernels": [
+    {
+      "kernel": "exact L2 top-k (20 queries)",
+      "native_ms": 10.810124998897663,
+      "numpy_ms": 84.38016699983564,
+      "speedup": 7.805660619876283,
+      "bit_exact": true
+    },
+    {
+      "kernel": "PQ ADC scan (m=16)",
+      "native_ms": 0.13574999866250437,
+      "numpy_ms": 1.525749999927939,
+      "speedup": 11.239410791606643,
+      "bit_exact": true
+    },
+    {
+      "kernel": "Hamming popcount top-k (128-bit)",
+      "native_ms": 0.06112499977461994,
+      "numpy_ms": 1.2722089995804708,
+      "speedup": 20.813235243703218,
+      "bit_exact": true
+    }
+  ],
+  "native_backend": "c++20-native (clang++ -O3)"
+}

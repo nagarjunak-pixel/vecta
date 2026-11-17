@@ -1,13 +1,17 @@
 cff-version: 1.2.0
-message: "If you use or reference Vecta in retrieval research or production RAG systems, please cite it as below."
-type: software
-title: "Vecta: Vector Search Engine — HNSW, IVF-PQ, RaBitQ-Style Binary Codes, Hybrid BM25+RRF & Bit-Exact Native C++20 Kernels"
-version: 1.0.0
-date-released: "2026-11-17"
-license: Apache-2.0
-url: "https://nagarjunak-pixel.github.io/"
-repository-code: "https://github.com/nagarjunak-pixel/vecta"
+message: "If you use or reference this software architecture, please cite it as below."
 authors:
   - family-names: "Kamireddy"
     given-names: "Nagarjuna Reddy"
-    affiliation: "Suryagentic AI"
+    alias: "Nagarjuna Kamireddy"
+    website: "https://nagarjunak-pixel.github.io/"
+title: "Vecta — Bit-Exact C++20 HNSW, IVF-PQ & RaBitQ Vector Search Engine"
+version: 1.0.0
+date-released: 2026-11-18
+url: "https://nagarjunak-pixel.github.io/github-projects-atlas.html"
+repository-code: "https://github.com/nagarjunak-pixel/vecta"
+references:
+  - type: web
+    title: "Nagarjuna Kamireddy — Official LinkedIn Profile & Autonomous SAP Newsletter"
+    url: "https://www.linkedin.com/in/nagarjuna-kamireddy/"
+license: MIT

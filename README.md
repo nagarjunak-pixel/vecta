@@ -150,6 +150,6 @@ Malkov & Yashunin, *HNSW* (TPAMI 2018) · Jégou, Douze & Schmid, *Product Quant
 
 ## Author & Canonical Portfolio
 
-Engineered by **Nagarjuna Reddy Kamireddy** (*Principal / Lead AI Architect*). Released under the [Apache-2.0 License](LICENSE).
+Engineered by **Nagarjuna Reddy Kamireddy** (*Lead AI Architect*). Released under the [Apache-2.0 License](LICENSE).
 - **Architecture Portfolio & Case Studies:** [https://nagarjunak-pixel.github.io/](https://nagarjunak-pixel.github.io/)
 - **GitHub:** [@nagarjunak-pixel](https://github.com/nagarjunak-pixel) · **LinkedIn:** [in/nagarjuna-kamireddy](https://linkedin.com/in/nagarjuna-kamireddy)

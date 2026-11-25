@@ -9,7 +9,7 @@ description = "Vector search engine: HNSW graph (heuristic neighbour selection, 
 readme = "README.md"
 license = { text = "Apache-2.0" }
 requires-python = ">=3.12"
-authors = [{ name = "Nagarjuna Kamireddy", email = "sendemailtonagarjuna@gmail.com" }]
+authors = [{ name = "Nagarjuna Kamireddy", email = "writetonagarjuna@gmail.com" }]
 keywords = ["vector-search", "hnsw", "product-quantization", "ann", "rag", "embeddings"]
 dependencies = [
   "numpy>=1.26.0",
